@@ -1,0 +1,249 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit Black', sans-serif;
+}
+
+body {
+    background-color: #fff;
+    display: flex;
+    height: 100vh;
+}
+
+.sidebar {
+    width: auto;
+    background-color: #3e29a9;
+    color: #fff;
+    padding: 40px 20px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar h1 {
+    font-size: 800;
+    text-align: center;
+    padding: 20px;
+}
+
+.user-card {
+    background: #ffffff;
+    color: #000000;
+    font-weight: 700;
+    padding: 25px;
+    border-radius: 20px;
+    text-align: center;
+    border: 2px solid #797979;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.main-area {
+    display: flex;
+    flex-grow: 1;
+    background: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.main-area h2 {
+    padding: 20px;
+    font-size: 40px;
+}
+
+.btn-login {
+    width: 500px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 16px;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 5px;
+    transition: 0.3s ease;
+}
+
+.btn-login:hover {
+    background-color: #3e29a9;
+    border-left: 8px solid #000000;
+}
+
+.login {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(15, 23, 42, 0.4);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 30px 40px;
+    border-radius: 24px;
+    border-top: 5px solid #3e29a9;
+    height: 350px;
+    width: 400px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    position: relative;
+}
+
+.modal-content h1 {
+    padding: 20px;
+    font-size: 25px;
+}
+
+.input-login {
+    width: 300px;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+    font-size: 16px;
+}
+
+.input-login:focus {
+    outline: none;
+    border: 1px solid #3e29a9;
+}
+
+.btn-log {
+    width: 300px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 16px;
+    border: none;
+    padding: 20px 40px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+    transition: 0.3s ease;
+}
+
+.btn-log:hover {
+    background-color: #3e29a9;
+    border-left: 8px solid #000;
+}
+
+.btn-cerrar {
+    width: 80px;
+    height: 40px;
+    background-color: #ffffff;
+    color: #656565;
+    border: 1px solid #989898;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.btn-cerrar:hover {
+    background-color: #d2d2d2;
+}
+
+.pag-docente {
+    display: none;
+    flex-grow: 1;
+    background: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.pag-administrativo {
+    display: none;
+    flex-grow: 1;
+    background: #fff;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.pag-administrativo h1 {
+    margin-bottom: 50px;
+}
+
+.btn-menu {
+    width: 200px;
+    background-color: #000000;
+    color: #ffffff;
+    font-size: 16px;
+    border: none;
+    padding: 20px 0px;
+    border-radius: 15px;
+    cursor: pointer;
+    font-weight: 800;
+    letter-spacing: 1px;
+    margin: 5px;
+    transition: 0.3s ease;
+}
+
+.btn-menu:hover {
+    background-color: #3e29a9;
+    border-left: 8px solid #000;
+}
+
+.opciones-alumnos-docente {
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    overflow-y: auto;
+}
+
+.opciones-select {
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+    transition: 0.3s;
+}
+
+.opciones-select:focus {
+    border-color: #3e29a9;
+}
+
+.btn-ver {
+    width: 100%;
+    background: #1a1a1a;
+    color: white;
+    padding: 18px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.btn-ver:hover {
+    background: #3e29a9;
+
+}

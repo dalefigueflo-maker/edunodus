@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edulink</title>
+    <link rel="icon" href="imagenes/logo1.png" type="image/png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="sidebar">
+        <h1>EDULINK</h1>
+        <div class="user-card">
+            <h1>👤</h1>
+            <p id="user-display">Invitado</p>
+        </div>
+    </div>
+    <div class="main-area" id="main-area">
+        <h2>Ingresar al Sistema</h2>
+        <button class="btn-login" onclick="abrirLogin('DOCENTE')">DOCENTE</button>
+        <button class="btn-login" onclick="abrirLogin('ADMINISTRATIVO')">ADMINISTRATIVO</button>
+    </div>
+
+    <div class="login" id="DOCENTE">
+        <div class="modal-content">
+            <h1>Acceso Docente</h1>
+            <p><input id="usuario-docente" type="text" class="input-login" placeholder="Usuario"></p>
+            <p><input id="contrasena-docente" type="password" class="input-login" placeholder="Contraseña"></p>
+            <p><button class="btn-log" onclick="ingresarAlPortal('DOCENTE')">INGRESAR</button></p>
+            <p><button class="btn-cerrar" onclick="cerrarLogin('DOCENTE')">Cerrar</button></p>
+        </div>
+    </div>
+    <div class="login" id="ADMINISTRATIVO">
+        <div class="modal-content">
+            <h1>Acceso Administrativo</h1>
+            <p><input id="usuario-admin" type="text" class="input-login" placeholder="Usuario"></p>
+            <p><input id="contrasena-admin" type="password" class="input-login" placeholder="Contraseña"></p>
+            <p><button class="btn-log" onclick="ingresarAlPortal('ADMINISTRATIVO')">INGRESAR</button></p>
+            <p><button class="btn-cerrar" onclick="cerrarLogin('ADMINISTRATIVO')">Cerrar</button></p>
+        </div>
+    </div>
+
+    <div class="pag-docente" id="pag-docente">
+        <h1>Docente</h1>
+        <p>
+            <button class="btn-menu" onclick="abrirAlumnosDocente()">ALUMNOS</button>
+            <button class="btn-menu" onclick="abrirAsistenciasDocente()">ASISTENCIAS</button>
+            <button class="btn-menu" onclick="abrirEsquelasDocente()">ESQUELAS</button>
+            <button class="btn-cerrar" onclick="terminarSesión('DOCENTE')">Cerrar Sesión</button>
+        </p>
+    </div>
+    <div class="pagina-alumnos-docente" id="pagina-alumnos-docente">
+        <div class="opciones-alumnos-docente" id="opciones-alumnos-docentes">
+        </div>
+    </div>
+
+    <div class="pag-administrativo" id="pag-administrativo">
+        <h1>Administrativo</h1>
+        <p>
+            <button class="btn-menu" onclick="abrirPaginaAlumnos()">ALUMNOS</button>
+            <button class="btn-menu" onclick="abrirPaginaDocentes()">DOCENTES</button>
+            <button class="btn-menu" onclick="abrirPaginaAdministradores()">ADMINISTRADORES</button>
+            <button class="btn-menu" onclick="abrirPaginaEsquelas()">ESQUELAS</button>
+            <button class="btn-cerrar" onclick="terminarSesión('ADMINISTRATIVO')">Cerrar Sesión</button>
+        </p>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+
+    <script>
+        const firebaseConfig = {
+            apiKey: "AIzaSyAWZDxgCQmMLEtgFAgD1-GlshobFc5gaQM",
+            authDomain: "rudesystem-46ee8.firebaseapp.com",
+            projectId: "rudesystem-46ee8",
+            storageBucket: "rudesystem-46ee8.firebasestorage.app",
+            messagingSenderId: "787989362114",
+            appId: "1:787989362114:web:e1065dd047aaa875fa525b",
+            measurementId: "G-79T7N0LGC2"
+        };
+        // Inicializamos Firebase para que esté listo antes de usar script.js
+        firebase.initializeApp(firebaseConfig);
+        const db = firebase.firestore();
+    </script>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
